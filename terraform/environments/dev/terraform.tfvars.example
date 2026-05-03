@@ -1,0 +1,6 @@
+aws_region               = "eu-west-3"
+aws_profile              = "poke-website"
+project_name             = "pokedex-ci-cd-lab"
+environment              = "dev"
+instance_type            = "t3.micro"
+elastic_ip_allocation_id = "eipalloc-xxxxxxxxxxxxxxxxx"

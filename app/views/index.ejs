@@ -1,0 +1,48 @@
+<%- include("partials/head", { title }) %>
+<%- include("partials/navbar") %>
+
+<main class="home-page">
+    <section class="home-intro">
+        <p class="eyebrow">Pokédex explorer</p>
+        <h1>Explore Pokémon by type.</h1>
+        <p class="hero-text">
+            Pick a type, browse matching Pokémon, or search directly by name.
+        </p>
+
+        <div class="actions">
+            <a class="button primary" href="/search">Search Pokémon</a>
+            <a class="button secondary" href="/about">Project details</a>
+        </div>
+    </section>
+
+    <section class="type-section">
+        <div class="section-heading">
+            <p class="eyebrow">Types</p>
+            <h2>Choose a Pokémon type</h2>
+        </div>
+
+        <div class="type-grid">
+            <a class="type-card type-normal" href="/pokedex?type=normal">⚪ Normal</a>
+            <a class="type-card type-fire" href="/pokedex?type=fire">🔥 Fire</a>
+            <a class="type-card type-water" href="/pokedex?type=water">💧 Water</a>
+            <a class="type-card type-electric" href="/pokedex?type=electric">⚡ Electric</a>
+            <a class="type-card type-grass" href="/pokedex?type=grass">🌿 Grass</a>
+            <a class="type-card type-ice" href="/pokedex?type=ice">❄️ Ice</a>
+            <a class="type-card type-fighting" href="/pokedex?type=fighting">🥊 Fighting</a>
+            <a class="type-card type-poison" href="/pokedex?type=poison">☠️ Poison</a>
+            <a class="type-card type-ground" href="/pokedex?type=ground">⛰️ Ground</a>
+            <a class="type-card type-flying" href="/pokedex?type=flying">🪽 Flying</a>
+            <a class="type-card type-psychic" href="/pokedex?type=psychic">🔮 Psychic</a>
+            <a class="type-card type-bug" href="/pokedex?type=bug">🐞 Bug</a>
+            <a class="type-card type-rock" href="/pokedex?type=rock">🪨 Rock</a>
+            <a class="type-card type-ghost" href="/pokedex?type=ghost">👻 Ghost</a>
+            <a class="type-card type-dragon" href="/pokedex?type=dragon">🐉 Dragon</a>
+            <a class="type-card type-dark" href="/pokedex?type=dark">🌑 Dark</a>
+            <a class="type-card type-steel" href="/pokedex?type=steel">⚙️ Steel</a>
+            <a class="type-card type-fairy" href="/pokedex?type=fairy">✨ Fairy</a>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

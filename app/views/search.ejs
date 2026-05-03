@@ -1,0 +1,41 @@
+<%- include("partials/head", { title }) %>
+<%- include("partials/navbar") %>
+
+<main class="page">
+    <section class="panel">
+        <p class="eyebrow">PokéAPI search</p>
+        <h1>Search a Pokémon</h1>
+        <p class="subtitle">
+            The browser calls our Express backend, then the backend fetches data from PokéAPI.
+        </p>
+
+        <form id="search-form" class="search-form">
+            <input
+                id="pokemon-input"
+                type="text"
+                placeholder="pikachu"
+                autocomplete="off"
+                required
+            />
+            <button type="submit">Search</button>
+        </form>
+
+        <p id="message" class="message"></p>
+
+        <section id="pokemon-card" class="pokemon-card hidden">
+            <img id="pokemon-image" alt="Pokemon sprite" />
+            <h2 id="pokemon-name"></h2>
+
+            <div class="details">
+                <span id="pokemon-types"></span>
+                <span id="pokemon-size"></span>
+            </div>
+
+            <ul id="pokemon-stats" class="stats"></ul>
+        </section>
+    </section>
+</main>
+
+<script src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+app/node_modules/
+
+# Environment files
+.env
+.env.*
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+*.log
+
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.*
+**/terraform.tfvars
+**/crash.log
+**/crash.*.log
+
+# Docker
+.docker.env

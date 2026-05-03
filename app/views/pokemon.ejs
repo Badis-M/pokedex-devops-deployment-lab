@@ -1,0 +1,58 @@
+<%- include("partials/head", { title }) %>
+    <%- include("partials/navbar") %>
+
+        <main class="page wide">
+            <section class="panel"><a id="back-link" class="back-link" href="/all">← Back to all Pokémon</a>
+                <p class="eyebrow">Pokémon profile</p>
+                <h1 id="pokemon-name">Loading...</h1>
+                <p id="message" class="message"></p>
+
+                <section id="pokemon-detail" class="pokemon-detail hidden">
+                    <div class="pokemon-profile-card">
+                        <div class="pokemon-visual">
+                            <img id="pokemon-image" alt="Pokemon sprite" />
+                        </div>
+
+                        <div class="info-grid profile-info-grid">
+                            <article>
+                                <span>ID</span>
+                                <strong id="pokemon-id"></strong>
+                            </article>
+                            <article>
+                                <span>Types</span>
+                                <strong id="pokemon-types"></strong>
+                            </article>
+                            <article>
+                                <span>Height</span>
+                                <strong id="pokemon-height"></strong>
+                            </article>
+                            <article>
+                                <span>Weight</span>
+                                <strong id="pokemon-weight"></strong>
+                            </article>
+                            <article>
+                                <span>Base XP</span>
+                                <strong id="pokemon-xp"></strong>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="pokemon-info">
+                        <h2>Abilities</h2>
+                        <ul id="pokemon-abilities" class="pill-list"></ul>
+
+                        <h2>Base stats</h2>
+                        <ul id="pokemon-stats" class="stats detail-stats"></ul>
+
+                        <h2>Sample moves</h2>
+                        <ul id="pokemon-moves" class="pill-list"></ul>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <script src="/js/utils.js"></script>
+        <script src="/js/pokemon.js"></script>
+        </body>
+        
+        </html>

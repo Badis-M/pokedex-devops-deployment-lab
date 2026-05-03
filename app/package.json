@@ -1,0 +1,33 @@
+{
+  "name": "pokedex-ci-cd-lab",
+  "version": "1.0.0",
+  "description": "A small Node.js Pokedex app used to learn API consumption and CI/CD with GitHub Actions.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "check": "npm run lint && npm test"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "api",
+    "ci-cd",
+    "github-actions",
+    "pokedex"
+  ],
+  "author": "Merakchi Badis",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.2.1",
+    "jest": "^30.3.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
+  }
+}

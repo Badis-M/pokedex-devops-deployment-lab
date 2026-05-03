@@ -1,0 +1,23 @@
+<%- include("partials/head", { title }) %>
+    <%- include("partials/navbar") %>
+
+        <main class="page wide">
+            <section class="panel">
+                <p class="eyebrow">Full Pokédex</p>
+                <h1 id="page-title">Pokédex</h1>
+                <p id="page-subtitle" class="subtitle">
+                    Browse Pokémon in batches and load more when needed.
+                </p>
+                <p id="message" class="message"></p>
+                <section id="pokemon-grid" class="pokemon-grid"></section>
+                <div class="load-more-wrapper">
+                    <button id="load-more-button" type="button">Load more</button>
+                </div>
+            </section>
+        </main>
+
+        <script src="/js/utils.js"></script>
+        <script src="/js/pokedex.js"></script>
+        </body>
+
+        </html>
