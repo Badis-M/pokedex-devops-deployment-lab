@@ -13,7 +13,7 @@ variable "aws_profile" {
 variable "project_name" {
   description = "Project name used for resource naming and tagging."
   type        = string
-  default     = "pokedex-ci-cd-lab"
+  default     = "pokedex-devops-deployment-lab"
 }
 
 variable "environment" {

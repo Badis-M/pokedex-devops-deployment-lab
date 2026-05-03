@@ -146,7 +146,7 @@ Key filters:
 
 ```yaml
 filters:
-  tag:Project: pokedex-ci-cd-lab
+  tag:Project: pokedex-devops-deployment-lab
   tag:Environment: dev
   instance-state-name: running
 ```
@@ -338,14 +338,14 @@ pokedex-network
 Both containers join this network:
 
 ```text
-pokedex-ci-cd-lab
+pokedex-devops-deployment-lab
 caddy
 ```
 
 This allows Caddy to reach the app by container name:
 
 ```text
-http://pokedex-ci-cd-lab:3000
+http://pokedex-devops-deployment-lab:3000
 ```
 
 ---
@@ -356,10 +356,10 @@ The app container runs without public port mapping:
 
 ```bash
 docker run -d \
-  --name pokedex-ci-cd-lab \
+  --name pokedex-devops-deployment-lab \
   --network pokedex-network \
   --restart unless-stopped \
-  pokedex-ci-cd-lab:latest
+  pokedex-devops-deployment-lab:latest
 ```
 
 It is reachable by Caddy inside the Docker network.
@@ -389,7 +389,7 @@ Since the app no longer exposes port 3000 on the EC2 host, the healthcheck runs 
 docker run --rm \
   --network pokedex-network \
   curlimages/curl:latest \
-  http://pokedex-ci-cd-lab:3000/health
+  http://pokedex-devops-deployment-lab:3000/health
 ```
 
 ---

@@ -112,7 +112,7 @@ This avoids mixing credentials from other projects.
 All resources get common tags:
 
 ```text
-Project     = pokedex-ci-cd-lab
+Project     = pokedex-devops-deployment-lab
 Environment = dev
 ManagedBy   = terraform
 ```
@@ -217,7 +217,7 @@ Caddy needs to be reachable on port 80 and 443 for automatic certificate managem
 EC2 assumes this IAM role:
 
 ```text
-pokedex-ci-cd-lab-dev-ec2-ssm-role
+pokedex-devops-deployment-lab-dev-ec2-ssm-role
 ```
 
 It has the AWS managed policy:
@@ -237,7 +237,7 @@ Ansible's `amazon.aws.aws_ssm` connection plugin needs a bucket to transfer temp
 Terraform creates:
 
 ```text
-pokedex-ci-cd-lab-dev-ansible-transfer-<random>
+pokedex-devops-deployment-lab-dev-ansible-transfer-<random>
 ```
 
 The bucket is:

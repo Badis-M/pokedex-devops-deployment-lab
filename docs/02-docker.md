@@ -33,7 +33,7 @@ They have different purposes and should not be mixed.
 
 | Dockerfile | Image | Purpose |
 |---|---|---|
-| `Dockerfile` | `pokedex-ci-cd-lab:local` | Runs the Node.js app |
+| `Dockerfile` | `pokedex-devops-deployment-lab:local` | Runs the Node.js app |
 | `tools/ansible/Dockerfile` | `pokedex-ansible:local` | Runs Ansible, AWS CLI and SSM plugin |
 
 This is a clean separation:
@@ -201,7 +201,7 @@ When a container starts, Docker runs `npm start`, which runs `node src/server.js
 From the repository root:
 
 ```bash
-docker build -t pokedex-ci-cd-lab:local .
+docker build -t pokedex-devops-deployment-lab:local .
 ```
 
 ---
@@ -209,7 +209,7 @@ docker build -t pokedex-ci-cd-lab:local .
 ## Run the app image locally
 
 ```bash
-docker run --rm -p 3000:3000 pokedex-ci-cd-lab:local
+docker run --rm -p 3000:3000 pokedex-devops-deployment-lab:local
 ```
 
 Meaning:
@@ -228,7 +228,7 @@ curl http://localhost:3000/health
 Expected response:
 
 ```json
-{"status":"ok","service":"pokedex-ci-cd-lab"}
+{"status":"ok","service":"pokedex-devops-deployment-lab"}
 ```
 
 ---
@@ -279,13 +279,13 @@ Container
 Example:
 
 ```bash
-docker build -t pokedex-ci-cd-lab:local .
+docker build -t pokedex-devops-deployment-lab:local .
 ```
 
 creates an image.
 
 ```bash
-docker run pokedex-ci-cd-lab:local
+docker run pokedex-devops-deployment-lab:local
 ```
 
 creates a running container from that image.
@@ -297,17 +297,17 @@ creates a running container from that image.
 Ansible builds the application image on the EC2 instance:
 
 ```bash
-docker build -t pokedex-ci-cd-lab:latest .
+docker build -t pokedex-devops-deployment-lab:latest .
 ```
 
 Then runs it inside a Docker network:
 
 ```bash
 docker run -d \
-  --name pokedex-ci-cd-lab \
+  --name pokedex-devops-deployment-lab \
   --network pokedex-network \
   --restart unless-stopped \
-  pokedex-ci-cd-lab:latest
+  pokedex-devops-deployment-lab:latest
 ```
 
 The app container does not expose port 3000 publicly.

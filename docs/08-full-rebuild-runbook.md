@@ -76,7 +76,7 @@ curl http://localhost:3000/health
 Expected:
 
 ```json
-{"status":"ok","service":"pokedex-ci-cd-lab"}
+{"status":"ok","service":"pokedex-devops-deployment-lab"}
 ```
 
 Stop the server:
@@ -98,13 +98,13 @@ cd ..
 Build:
 
 ```bash
-docker build -t pokedex-ci-cd-lab:local .
+docker build -t pokedex-devops-deployment-lab:local .
 ```
 
 Run:
 
 ```bash
-docker run --rm -p 3000:3000 pokedex-ci-cd-lab:local
+docker run --rm -p 3000:3000 pokedex-devops-deployment-lab:local
 ```
 
 In another terminal:
@@ -169,7 +169,7 @@ eu-west-3
 Tag:
 
 ```text
-Name = pokedex-ci-cd-lab-shared-eip
+Name = pokedex-devops-deployment-lab-shared-eip
 ```
 
 Record the allocation ID:
@@ -199,7 +199,7 @@ Example:
 ```hcl
 aws_region               = "eu-west-3"
 aws_profile              = "poke-website"
-project_name             = "pokedex-ci-cd-lab"
+project_name             = "pokedex-devops-deployment-lab"
 environment              = "dev"
 instance_type            = "t3.micro"
 elastic_ip_allocation_id = "<EIP_ALLOCATION_ID>"
@@ -255,7 +255,7 @@ yes
 Expected outputs:
 
 ```text
-ansible_transfer_bucket_name = "pokedex-ci-cd-lab-dev-ansible-transfer-..."
+ansible_transfer_bucket_name = "pokedex-devops-deployment-lab-dev-ansible-transfer-..."
 application_url = "http://<ELASTIC_IP>"
 elastic_ip = "<ELASTIC_IP>"
 instance_id = "i-..."
@@ -409,7 +409,7 @@ curl https://pokedex.badiscloud.fr/health
 Expected:
 
 ```json
-{"status":"ok","service":"pokedex-ci-cd-lab"}
+{"status":"ok","service":"pokedex-devops-deployment-lab"}
 ```
 
 Open in browser:
@@ -439,7 +439,7 @@ Caddyfile should be:
 
 ```text
 pokedex.badiscloud.fr {
-    reverse_proxy pokedex-ci-cd-lab:3000
+    reverse_proxy pokedex-devops-deployment-lab:3000
 }
 ```
 

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document explains the application layer of the `pokedex-ci-cd-lab` project.
+This document explains the application layer of the `pokedex-devops-deployment-lab` project.
 
 The goal of the application is to provide a small Pokédex web app used to learn:
 
@@ -217,7 +217,7 @@ These routes return HTML pages rendered from EJS templates.
 app.get("/health", (req, res) => {
     return res.status(200).json({
         status: "ok",
-        service: "pokedex-ci-cd-lab",
+        service: "pokedex-devops-deployment-lab",
     });
 });
 ```
@@ -227,7 +227,7 @@ Used by local checks, Docker checks, Ansible deployment validation and public he
 Expected response:
 
 ```json
-{"status":"ok","service":"pokedex-ci-cd-lab"}
+{"status":"ok","service":"pokedex-devops-deployment-lab"}
 ```
 
 ---

@@ -5,10 +5,10 @@
   gather_facts: true
 
   vars:
-    app_name: pokedex-ci-cd-lab
-    app_dir: /opt/pokedex-ci-cd-lab
-    image_name: pokedex-ci-cd-lab
-    container_name: pokedex-ci-cd-lab
+    app_name: pokedex-devops-deployment-lab
+    app_dir: /opt/pokedex-devops-deployment-lab
+    image_name: pokedex-devops-deployment-lab
+    container_name: pokedex-devops-deployment-lab
     caddy_container_name: caddy
     container_port: 3000
     local_bundle_dir: /tmp/pokedex-deploy-bundle

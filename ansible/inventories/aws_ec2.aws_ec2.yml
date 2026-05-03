@@ -5,7 +5,7 @@ regions:
 profile: poke-website
 
 filters:
-  tag:Project: pokedex-ci-cd-lab
+  tag:Project: pokedex-devops-deployment-lab
   tag:Environment: dev
   instance-state-name: running
 

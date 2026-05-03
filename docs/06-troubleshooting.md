@@ -427,7 +427,7 @@ Caddy was reachable and HTTPS worked, but Caddy could not reach the Node app.
 Create a Docker network and use:
 
 ```text
-reverse_proxy pokedex-ci-cd-lab:3000
+reverse_proxy pokedex-devops-deployment-lab:3000
 ```
 
 ---

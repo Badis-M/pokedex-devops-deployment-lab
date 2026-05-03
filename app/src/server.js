@@ -48,7 +48,7 @@ app.get("/pokemon", (req, res) => {
 app.get("/health", (req, res) => {
     return res.status(200).json({
         status: "ok",
-        service: "pokedex-ci-cd-lab",
+        service: "pokedex-devops-deployment-lab",
     });
 });
 

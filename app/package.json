@@ -1,5 +1,5 @@
 {
-  "name": "pokedex-ci-cd-lab",
+  "name": "pokedex-devops-deployment-lab",
   "version": "1.0.0",
   "description": "A small Node.js Pokedex app used to learn API consumption and CI/CD with GitHub Actions.",
   "main": "src/server.js",

@@ -444,7 +444,7 @@ The health route is:
 app.get("/health", (req, res) => {
     return res.status(200).json({
         status: "ok",
-        service: "pokedex-ci-cd-lab",
+        service: "pokedex-devops-deployment-lab",
     });
 });
 ```
@@ -458,7 +458,7 @@ It returns a predictable JSON response:
 ```json
 {
   "status": "ok",
-  "service": "pokedex-ci-cd-lab"
+  "service": "pokedex-devops-deployment-lab"
 }
 ```
 
@@ -1663,7 +1663,7 @@ describe("GET /health", () => {
     expect(response.status).toBe(200);
     expect(response.body).toEqual({
       status: "ok",
-      service: "pokedex-ci-cd-lab",
+      service: "pokedex-devops-deployment-lab",
     });
   });
 });
@@ -1714,7 +1714,7 @@ and:
 ```js
 expect(response.body).toEqual({
   status: "ok",
-  service: "pokedex-ci-cd-lab",
+  service: "pokedex-devops-deployment-lab",
 });
 ```
 

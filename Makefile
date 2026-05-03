@@ -4,7 +4,7 @@ AWS_REGION ?= eu-west-3
 APP_DIR := app
 TERRAFORM_DIR := terraform/environments/dev
 
-APP_IMAGE ?= pokedex-ci-cd-lab:local
+APP_IMAGE ?= pokedex-devops-deployment-lab:local
 ANSIBLE_IMAGE ?= pokedex-ansible:local
 ANSIBLE_PLATFORM ?= linux/amd64
 

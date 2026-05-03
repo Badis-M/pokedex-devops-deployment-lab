@@ -167,8 +167,8 @@ curl http://localhost:3000/health
 From the repository root:
 
 ```bash
-docker build -t pokedex-ci-cd-lab:local .
-docker run --rm -p 3000:3000 pokedex-ci-cd-lab:local
+docker build -t pokedex-devops-deployment-lab:local .
+docker run --rm -p 3000:3000 pokedex-devops-deployment-lab:local
 ```
 
 ---

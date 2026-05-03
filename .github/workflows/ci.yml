@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build application Docker image
-        run: docker build -t pokedex-ci-cd-lab:ci .
+        run: docker build -t pokedex-devops-deployment-lab:ci .
 
   terraform:
     name: Validate Terraform
