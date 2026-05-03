@@ -26,7 +26,7 @@ User
 
 ![Home page](images/home.png)
 
-![Pokédex by type](images/pokedex-type.png)
+![Pokédex by type](images/pokemon-type.png)
 
 ![Pokémon details](images/pokemon-details.png)
 
