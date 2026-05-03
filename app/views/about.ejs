@@ -4,36 +4,52 @@
 <main class="page wide">
     <section class="panel">
         <p class="eyebrow">Project details</p>
-        <h1>Node.js API app with CI/CD validation.</h1>
+        <h1>Node.js Pokédex deployed with a complete DevOps workflow.</h1>
         <p class="hero-text">
-            This project is a small Pokédex application built to practice API consumption,
-            automated testing, linting, and GitHub Actions CI.
+            This project started as a small Pokédex application and evolved into a full DevOps
+            deployment lab using Docker, Terraform, Ansible, AWS Systems Manager, DNS, HTTPS,
+            and GitHub Actions CI.
         </p>
 
         <div class="about-grid">
             <article>
                 <h2>Application</h2>
-                <p>Node.js and Express serve the frontend and expose backend API routes.</p>
+                <p>Node.js and Express serve the EJS frontend and expose backend API routes.</p>
             </article>
+
             <article>
                 <h2>External API</h2>
                 <p>The backend calls PokéAPI, formats the response, and returns only useful data.</p>
             </article>
+
             <article>
-                <h2>Testing</h2>
-                <p>Jest and Supertest validate the API routes. External API calls are mocked.</p>
+                <h2>Docker</h2>
+                <p>The application is packaged as a Docker image and deployed as a container.</p>
             </article>
+
             <article>
-                <h2>Quality</h2>
-                <p>ESLint checks JavaScript quality before code is merged or shipped.</p>
+                <h2>Infrastructure</h2>
+                <p>Terraform provisions the AWS infrastructure, including VPC, EC2, IAM, SSM, and security groups.</p>
             </article>
+
+            <article>
+                <h2>Deployment</h2>
+                <p>Ansible runs from a Dockerized control node and deploys the app through AWS Systems Manager without SSH.</p>
+            </article>
+
+            <article>
+                <h2>HTTPS</h2>
+                <p>Caddy runs as a reverse proxy container and provides HTTPS with Let's Encrypt.</p>
+            </article>
+
             <article>
                 <h2>CI</h2>
-                <p>GitHub Actions installs dependencies, runs lint, and runs tests on every push.</p>
+                <p>GitHub Actions validates the Node.js app, builds the Docker image, and checks Terraform formatting and validation.</p>
             </article>
+
             <article>
-                <h2>Next step</h2>
-                <p>Add artifact generation and later a deployment target.</p>
+                <h2>Operations</h2>
+                <p>Makefile commands automate the main workflow: infrastructure creation, deployment, health checks, and cleanup.</p>
             </article>
         </div>
     </section>

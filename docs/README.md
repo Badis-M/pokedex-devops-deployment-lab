@@ -1,6 +1,8 @@
-# Pokedex CI/CD Lab
+# Pokedex DevOps Deployment Lab
 
-A small Node.js Pokédex application used to learn application development, Docker packaging, Terraform infrastructure, Ansible deployment, AWS Systems Manager, DNS and HTTPS.
+![CI](https://github.com/Badis-M/pokedex-devops-deployment-lab/actions/workflows/ci.yml/badge.svg)
+
+A small Node.js Pokédex application used to learn and demonstrate a complete DevOps deployment workflow: application development, Docker packaging, Terraform infrastructure, Ansible deployment through AWS Systems Manager, DNS and HTTPS.
 
 Final public architecture:
 
@@ -15,6 +17,18 @@ User
 → Node.js Express app container
 → PokéAPI
 ```
+
+---
+
+## Screenshots
+
+> Screenshots of the deployed application.
+
+![Home page](docs/images/home.png)
+
+![Pokédex by type](docs/images/pokemon-type.png)
+
+![Pokémon details](docs/images/pokemon-details.png)
 
 ---
 
@@ -38,34 +52,7 @@ It demonstrates:
 - HTTPS with Let’s Encrypt
 - OVH DNS
 - cost-aware infrastructure lifecycle
-
----
-
-## Repository structure
-
-```text
-.
-├── app
-│   ├── package.json
-│   ├── public
-│   ├── src
-│   ├── tests
-│   └── views
-├── ansible
-│   ├── ansible.cfg
-│   ├── inventories
-│   └── playbooks
-├── docs
-├── terraform
-│   ├── environments
-│   └── modules
-├── tools
-│   └── ansible
-├── Dockerfile
-├── .dockerignore
-├── .gitignore
-└── Makefile
-```
+- GitHub Actions CI
 
 ---
 
@@ -138,13 +125,55 @@ The playbook:
 2. copies a clean app bundle
 3. builds the Docker image on EC2
 4. creates a Docker network
-5. runs the app container
-6. runs the Caddy container
+5. runs the Node.js application container
+6. runs the Caddy reverse proxy container
 7. verifies the health endpoint
 
 ---
 
-## Local app commands
+## Security and operations choices
+
+- No SSH access is exposed on the EC2 instance.
+- Administration is done through AWS Systems Manager.
+- The Node.js container is not exposed directly to the Internet.
+- Caddy is the only public entrypoint on ports 80 and 443.
+- HTTPS is handled automatically with Let’s Encrypt.
+- Terraform state and variable files are excluded from Git.
+- AWS credentials are not stored in the repository.
+- Infrastructure can be destroyed and recreated with Makefile commands.
+- The Elastic IP is intentionally kept outside the normal destroy lifecycle to keep DNS stable.
+
+---
+
+## Repository structure
+
+```text
+.
+├── app
+│   ├── package.json
+│   ├── public
+│   ├── src
+│   ├── tests
+│   └── views
+├── ansible
+│   ├── ansible.cfg
+│   ├── inventories
+│   └── playbooks
+├── docs
+├── terraform
+│   ├── environments
+│   └── modules
+├── tools
+│   └── ansible
+├── Dockerfile
+├── .dockerignore
+├── .gitignore
+└── Makefile
+```
+
+---
+
+## Local application commands
 
 From `app/`:
 
@@ -162,7 +191,7 @@ curl http://localhost:3000/health
 
 ---
 
-## Docker app image
+## Docker application image
 
 From the repository root:
 
@@ -190,7 +219,7 @@ make health
 make tf-destroy
 ```
 
-Typical workflow:
+Typical deployment workflow:
 
 ```bash
 make tf-apply
@@ -205,6 +234,23 @@ Cleanup:
 ```bash
 make tf-destroy
 ```
+
+---
+
+## GitHub Actions CI
+
+The CI pipeline runs on push and pull requests to `main`.
+
+It validates:
+
+- Node.js dependencies installation
+- ESLint
+- Jest tests
+- application Docker image build
+- Terraform formatting
+- Terraform validation
+
+The CI does not deploy infrastructure and does not require AWS credentials.
 
 ---
 
@@ -249,14 +295,14 @@ docs/07-cost-and-cleanup.md
 docs/08-full-rebuild-runbook.md
 ```
 
-Recommended learning order:
+Recommended reading order:
 
 ```text
-1. 08-full-rebuild-runbook.md
-2. 03-terraform-aws-infra.md
-3. 04-ansible-ssm-deployment.md
-4. 05-domain-https-caddy.md
-5. 06-troubleshooting.md
+1. docs/08-full-rebuild-runbook.md
+2. docs/03-terraform-aws-infra.md
+3. docs/04-ansible-ssm-deployment.md
+4. docs/05-domain-https-caddy.md
+5. docs/06-troubleshooting.md
 ```
 
 ---
@@ -274,5 +320,6 @@ Code
 → Ansible deployment
 → HTTPS reverse proxy
 → public domain
+→ GitHub Actions CI
 → reproducible workflow
 ```
