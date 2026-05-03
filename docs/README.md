@@ -24,11 +24,11 @@ User
 
 > Screenshots of the deployed application.
 
-![Home page](docs/images/home.png)
+![Home page](images/home.png)
 
-![Pokédex by type](docs/images/pokemon-type.png)
+![Pokédex by type](images/pokedex-type.png)
 
-![Pokémon details](docs/images/pokemon-details.png)
+![Pokémon details](images/pokemon-details.png)
 
 ---
 
