@@ -4,7 +4,29 @@
 
 A small Node.js Pokédex application used to learn and demonstrate a complete DevOps deployment workflow: application development, Docker packaging, Terraform infrastructure, Ansible deployment through AWS Systems Manager, DNS and HTTPS.
 
-Final public architecture:
+---
+
+## Runtime architecture
+
+```mermaid
+flowchart LR
+    user["User Browser"] --> dns["OVH DNS<br/>pokedex.badiscloud.fr"]
+    dns --> eip["AWS Elastic IP"]
+    eip --> ec2["AWS EC2 Instance<br/>Amazon Linux 2023"]
+
+    subgraph docker["Docker on EC2"]
+        caddy["Caddy Container<br/>Public entrypoint 80/443"]
+        network["Docker Network<br/>pokedex-network"]
+        app["Node.js Express App<br/>Port 3000 internal only"]
+    end
+
+    ec2 --> caddy
+    caddy --> network
+    network --> app
+    app --> pokeapi["PokéAPI"]
+```
+
+Traffic flow:
 
 ```text
 User
