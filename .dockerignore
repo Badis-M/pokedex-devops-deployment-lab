@@ -6,7 +6,11 @@ app/node_modules
 docs
 terraform
 ansible
-tools
+tools/*
+!tools/ansible/
+!tools/ansible/Dockerfile
+!tools/ansible/requirements.txt
+!tools/ansible/requirements.yml
 
 .DS_Store
 .env
