@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokédex by Type | Pokédex DevOps Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html">Pokédex</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="all.html">All Pokémon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="page wide">
+    <section class="panel">
+      <a class="back-link" href="index.html">← Back to types</a>
+      <p class="eyebrow">Pokédex type</p>
+      <h1 id="page-title">Pokémon Type</h1>
+      <p id="page-subtitle" class="subtitle">Loading Pokémon from PokéAPI...</p>
+      <p id="message" class="message"></p>
+
+      <div id="pokemon-grid" class="pokemon-grid"></div>
+
+      <div class="load-more-wrapper">
+        <button id="load-more-button" type="button">Load more</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/utils.js"></script>
+  <script src="js/pokedex.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Pokémon | Pokédex DevOps Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html">Pokédex</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="all.html">All Pokémon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <p class="eyebrow">Search</p>
+      <h1>Find a Pokémon</h1>
+      <p class="subtitle">Search by Pokémon name, for example pikachu, charizard, or mewtwo.</p>
+
+      <form id="search-form" class="search-form">
+        <input id="pokemon-input" type="text" placeholder="Enter Pokémon name" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="js/search.js"></script>
+</body>
+</html>

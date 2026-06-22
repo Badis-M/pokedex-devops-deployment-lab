@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokémon Details | Pokédex DevOps Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html">Pokédex</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="all.html">All Pokémon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="page wide">
+    <section class="panel">
+      <a id="back-link" class="back-link" href="all.html">← Back to all Pokémon</a>
+      <p class="eyebrow">Pokémon profile</p>
+      <h1 id="pokemon-name">Loading...</h1>
+      <p id="message" class="message"></p>
+
+      <div id="pokemon-detail" class="pokemon-detail hidden">
+        <section class="pokemon-visual pokemon-profile-card">
+          <img id="pokemon-image" src="images/pokeball.png" alt="Pokémon sprite">
+          <div class="info-grid profile-info-grid">
+            <article><span>ID</span><strong id="pokemon-id"></strong></article>
+            <article><span>Base XP</span><strong id="pokemon-xp"></strong></article>
+            <article><span>Types</span><strong id="pokemon-types"></strong></article>
+            <article><span>Height</span><strong id="pokemon-height"></strong></article>
+            <article><span>Weight</span><strong id="pokemon-weight"></strong></article>
+          </div>
+        </section>
+
+        <section class="pokemon-info">
+          <h2>Stats</h2>
+          <ul id="pokemon-stats" class="detail-stats"></ul>
+
+          <h2>Abilities</h2>
+          <ul id="pokemon-abilities" class="pill-list"></ul>
+
+          <h2>Moves</h2>
+          <ul id="pokemon-moves" class="pill-list"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/utils.js"></script>
+  <script src="js/pokemon.js"></script>
+</body>
+</html>

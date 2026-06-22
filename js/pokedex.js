@@ -22,7 +22,7 @@ function renderPokemonCard(pokemon) {
   const link = document.createElement("a");
   link.className = "pokemon-list-card";
   const selectedType = getSelectedType();
-  link.href = `/pokemon?name=${pokemon.name}&type=${selectedType}`;
+  link.href = `pokemon.html?name=${pokemon.name}&type=${selectedType}`;
 
   const image = document.createElement("img");
   image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
@@ -86,21 +86,22 @@ async function loadPokemonByType() {
   updateStatus();
 
   try {
-    const response = await fetch(
-      `/api/pokemon/type/${selectedType}?limit=${limit}&offset=${offset}`,
-    );
-    const data = await response.json();
+    const response = await fetch(`https://pokeapi.co/api/v2/type/${selectedType}`);
+    const typeData = await response.json();
 
     if (!response.ok) {
-      message.textContent = data.error || "Unable to load Pokémon.";
+      message.textContent = "Unable to load Pokémon.";
       return;
     }
 
-    totalCount = data.count;
-    data.results.forEach(renderPokemonCard);
-    offset += data.results.length;
+    const results = typeData.pokemon.map((entry) => entry.pokemon);
+    const batch = results.slice(offset, offset + limit);
+
+    totalCount = results.length;
+    batch.forEach(renderPokemonCard);
+    offset += batch.length;
   } catch {
-    message.textContent = "Unable to reach the server.";
+    message.textContent = "Unable to reach PokéAPI.";
   } finally {
     isLoading = false;
     updateStatus();

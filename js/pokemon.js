@@ -13,6 +13,28 @@ const movesElement = document.querySelector("#pokemon-moves");
 const backLink = document.querySelector("#back-link");
 const { formatPokemonName } = window.pokedexUtils;
 
+function mapPokemonApiResponse(data) {
+    return {
+        id: data.id,
+        name: data.name,
+        image: data.sprites.front_default || "images/pokeball.png",
+        types: data.types.map((entry) => formatPokemonName(entry.type.name)),
+        height: data.height,
+        weight: data.weight,
+        baseExperience: data.base_experience,
+        stats: data.stats.map((entry) => ({
+            name: formatPokemonName(entry.stat.name),
+            value: entry.base_stat,
+            max: 255,
+        })),
+        abilities: data.abilities.map((entry) => ({
+            name: formatPokemonName(entry.ability.name),
+            isHidden: entry.is_hidden,
+        })),
+        moves: data.moves.slice(0, 12).map((entry) => formatPokemonName(entry.move.name)),
+    };
+}
+
 function getSelectedPokemon() {
     const params = new URLSearchParams(window.location.search);
     return params.get("name");
@@ -27,12 +49,12 @@ function updateBackLink() {
     const selectedType = getSelectedType();
 
     if (!selectedType) {
-        backLink.href = "/all";
+        backLink.href = "all.html";
         backLink.textContent = "← Back to all Pokémon";
         return;
     }
 
-    backLink.href = `/pokedex?type=${selectedType}`;
+    backLink.href = `pokedex.html?type=${selectedType}`;
     backLink.textContent = `← Back to ${formatPokemonName(selectedType)} Pokémon`;
 }
 
@@ -107,17 +129,17 @@ async function loadPokemon() {
     message.textContent = "Loading...";
 
     try {
-        const response = await fetch(`/api/pokemon/${pokemonName}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
         const data = await response.json();
 
         if (!response.ok) {
-            message.textContent = data.error || "Pokemon not found.";
+            message.textContent = "Pokemon not found.";
             return;
         }
 
-        renderPokemon(data);
+        renderPokemon(mapPokemonApiResponse(data));
     } catch {
-        message.textContent = "Unable to reach the server.";
+        message.textContent = "Unable to reach PokéAPI.";
     }
 }
 

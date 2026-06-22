@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Pokédex DevOps Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html">Pokédex</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="all.html">All Pokémon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="page wide">
+    <section class="panel">
+      <p class="eyebrow">About this project</p>
+      <h1>Static demo, full DevOps infrastructure</h1>
+
+      <p class="hero-text">
+        This GitHub Pages version is a lightweight static demo of the Pokédex application.
+        It keeps the site permanently accessible without running AWS resources continuously.
+        The full version of the project is FinOps-oriented: the AWS infrastructure is created
+        for demonstrations, validation, and learning, then destroyed afterwards to control cloud costs.
+      </p>
+
+      <p class="hero-text">
+        The main branch remains the complete Platform / DevOps engineering project. It provisions
+        the cloud infrastructure with Terraform, deploys the application on EC2, packages the app
+        with Docker, automates configuration with Ansible, connects securely through AWS Systems
+        Manager Session Manager, and exposes the service through Caddy with HTTPS and a custom domain.
+      </p>
+
+      <div class="about-grid">
+        <article>
+          <h2>Live static demo</h2>
+          <p>
+            Hosted on GitHub Pages from a dedicated branch. The frontend calls PokéAPI directly
+            from the browser, so the application stays available without a running backend server.
+          </p>
+        </article>
+
+        <article>
+          <h2>Infrastructure as Code</h2>
+          <p>
+            Terraform is used to define, version, and recreate the AWS infrastructure consistently:
+            network, compute, security, deployment artifacts, variables, outputs, and environment structure.
+          </p>
+        </article>
+
+        <article>
+          <h2>AWS runtime</h2>
+          <p>
+            The full deployment runs on an EC2 instance, with the application containerized through Docker
+            and exposed as a real cloud-hosted service rather than only a local development app.
+          </p>
+        </article>
+
+        <article>
+          <h2>Secure operations</h2>
+          <p>
+            AWS Systems Manager Session Manager is used to operate the instance without opening SSH
+            inbound access, reducing exposure compared with traditional key-based administration.
+          </p>
+        </article>
+
+        <article>
+          <h2>Automated configuration</h2>
+          <p>
+            Ansible handles remote deployment and configuration tasks, making the operational setup
+            repeatable instead of relying on manual server changes.
+          </p>
+        </article>
+
+        <article>
+          <h2>HTTPS and domain</h2>
+          <p>
+            Caddy is used as the web entry point, with automatic HTTPS and domain-based routing for
+            a production-like access pattern.
+          </p>
+        </article>
+
+        <article>
+          <h2>FinOps mindset</h2>
+          <p>
+            The AWS environment is intentionally ephemeral. It can be rebuilt for demos, then destroyed
+            after validation to avoid unnecessary cloud spend.
+          </p>
+        </article>
+
+        <article>
+          <h2>Platform engineering value</h2>
+          <p>
+            The project demonstrates end-to-end delivery: application packaging, infrastructure provisioning,
+            secure access, deployment automation, HTTPS exposure, DNS integration, documentation, and cleanup.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

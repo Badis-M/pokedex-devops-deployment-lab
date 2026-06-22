@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Pokémon | Pokédex DevOps Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html">Pokédex</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="all.html">All Pokémon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="page wide">
+    <section class="panel">
+      <p class="eyebrow">Pokédex</p>
+      <h1>All Pokémon</h1>
+      <p id="page-subtitle" class="subtitle">Loading Pokémon from PokéAPI...</p>
+      <p id="message" class="message"></p>
+
+      <div id="pokemon-grid" class="pokemon-grid"></div>
+
+      <div class="load-more-wrapper">
+        <button id="load-more-button" type="button">Load more</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/utils.js"></script>
+  <script src="js/all.js"></script>
+</body>
+</html>

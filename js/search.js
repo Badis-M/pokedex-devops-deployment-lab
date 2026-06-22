@@ -16,5 +16,5 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  window.location.href = `/pokemon?name=${pokemonName}`;
+  window.location.href = `pokemon.html?name=${pokemonName}`;
 });
