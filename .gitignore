@@ -26,3 +26,6 @@ npm-debug.log*
 
 # Docker
 .docker.env
+
+docs/PROJECT_CONTEXT.md
+AGENTS.md
