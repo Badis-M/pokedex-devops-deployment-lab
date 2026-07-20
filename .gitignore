@@ -26,3 +26,6 @@ npm-debug.log*
 
 # Docker
 .docker.env
+# Local Codex context
+/AGENTS.md
+/docs/PROJECT_CONTEXT.md
